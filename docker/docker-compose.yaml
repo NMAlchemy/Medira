@@ -1,0 +1,31 @@
+version: '3'
+services:
+  web:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - db
+      - redis
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: repair_platform_db
+      MYSQL_USER: your_database_user
+      MYSQL_PASSWORD: your_database_password
+      MYSQL_ROOT_PASSWORD: your_root_password
+    volumes:
+      - mysql-data:/var/lib/mysql
+  redis:
+    image: redis:6.2
+  celery:
+    build: ./backend
+    command: celery -A startup_project worker -l info
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - redis
+volumes:
+  mysql-data:
