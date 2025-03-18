@@ -1,0 +1,15 @@
+django==4.2
+mysqlclient
+djangorestframework
+django-cors-headers
+channels
+channels-redis
+stripe
+shippo
+django-sendgrid-v5
+celery
+redis
+django-meta
+django-storages
+boto3
+gunicorn
