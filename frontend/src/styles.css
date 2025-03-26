@@ -1,0 +1,80 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Color Variables */
+:root {
+    --primary-pink: #ff69b4; /* Hot Pink */
+    --light-pink: #ff85c2;   /* Lighter Pink for hover */
+    --white: #ffffff;
+}
+
+/* Side Panel */
+.side-panel {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background-color: var(--white);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.side-panel.open {
+    left: 0; /* Slide in when open */
+}
+
+/* Feature Buttons */
+.panel-btn {
+    background-color: var(--primary-pink);
+    color: var(--white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.panel-btn:hover {
+    background-color: var(--light-pink);
+}
+
+/* Toggle Button */
+.toggle-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--primary-pink);
+    color: var(--white);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: var(--light-pink);
+  }
