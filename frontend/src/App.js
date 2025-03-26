@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="container">
       <Helmet>
-        <title>Repair Platform - Fix Electronics, Textiles, Footwear</title>
+        <title>Medira by Team Xentinel - Find Artisans and Fix Electronics, Textiles, Footwear</title>
         <meta name="description" content="Connect with verified artisans for repairs or get DIY tips." />
         <meta name="keywords" content="repair, artisans, electronics, textiles, footwear" />
       </Helmet>
