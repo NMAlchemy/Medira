@@ -1,0 +1,125 @@
+/* Import Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+/* Define CSS variables for consistent theming */
+:root {
+    --primary-color: #FF4B2B;
+    --secondary-color: #FF416C;
+    --background-color: #f6f5f7;
+    --text-color: #333;
+    --link-color: #3c97bf;
+}
+
+/* Apply box-sizing globally */
+* {
+    box-sizing: border-box;
+}
+
+/* Set default font size for the project */
+html {
+    font-size: 16px;
+}
+
+/* Reset margins and paddings for common elements */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles for layout and theme */
+body {
+    background: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    margin: -20px 0 50px;
+    color: var(--text-color);
+}
+
+/* Heading styles */
+h1 {
+    font-weight: bold;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Paragraph styles */
+p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+}
+
+/* Span styles */
+span {
+    font-size: 12px;
+}
+
+/* Link styles */
+a {
+    color: var(--text-color);
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+/* Button styles */
+button {
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
+button.ghost {
+    background-color: transparent;
+    border-color: #FFFFFF;
+}
+
+/* Footer styles */
+footer {
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: red;
+}
+
+footer a {
+    color: var(--link-color);
+    text-decoration: none;
+}
