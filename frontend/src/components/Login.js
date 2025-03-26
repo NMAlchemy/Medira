@@ -1,30 +1,39 @@
 import React, { useState } from 'react';
+import styles from './Login.module.css';
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = async () => {
-    const response = await fetch('http://localhost:8000/api/login/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password }),
-    });
-    const data = await response.json();
-    if (data.token) {
-      localStorage.setItem('token', data.token);
-      alert('Logged in!');
-    } else {
-      alert('Login failed');
-    }
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    // Example API call
+    console.log('Logging in with:', { username, password });
   };
 
   return (
-    <div className="container">
-      <input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
-      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-      <button onClick={handleLogin}>Login</button>
-    </div>
+    <form className={styles.loginContainer} onSubmit={handleLogin}>
+      <h2 className={styles.title}>Login</h2>
+      <input
+        className={styles.inputField}
+        type="text"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        placeholder="Username"
+        required
+      />
+      <input
+        className={styles.inputField}
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
+        required
+      />
+      <button className={styles.loginButton} type="submit">
+        Login
+      </button>
+    </form>
   );
 }
 
